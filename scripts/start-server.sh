@@ -47,6 +47,4 @@ wget "https://github.com/WebTools-NG/WebTools-NG/releases/download/V0.3.12.898c1
 chmod +x WebTools-NG-0.3.12.898c1ee.AppImage
 ./WebTools-NG-0.3.12.898c1ee.AppImage --appimage-extract
 cd squashfs-root
-mkdir chrome-sandbox
-chmod 4755 chrome-sandbox
-./webtools-ng
+./webtools-ng --no-sandbox
