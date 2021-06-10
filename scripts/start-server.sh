@@ -46,6 +46,7 @@ cd /home/docker
 wget "https://github.com/WebTools-NG/WebTools-NG/releases/download/V0.3.12.898c1ee/WebTools-NG-0.3.12.898c1ee.AppImage"
 chmod +x WebTools-NG-0.3.12.898c1ee.AppImage
 ./WebTools-NG-0.3.12.898c1ee.AppImage --appimage-extract
-mv squashfs-root webtools-ng
-cd webtools-ng
+cd squashfs-root
+mkdir chrome-sandbox
+chmod 4755 chrome-sandbox
 ./webtools-ng
