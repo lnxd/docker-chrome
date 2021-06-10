@@ -1,7 +1,5 @@
 FROM ich777/novnc-baseimage
 
-LABEL maintainer="admin@minenet.at"
-
 RUN export TZ=Europe/Rome && \
 	apt-get update && \
 	apt-get -y install --no-install-recommends libnss3 libatk-bridge2.0-0 libx11-xcb1 libgtk-3-0 libdrm2 libgbm1 libasound2 && \
