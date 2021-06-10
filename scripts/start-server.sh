@@ -44,10 +44,11 @@ sleep 2
 echo "---Starting WebTools-NG---"
 cd /home/docker
 if [ ! -d /home/docker/squashfs-root ]; then
-	wget "https://github.com/WebTools-NG/WebTools-NG/releases/download/V0.3.12.898c1ee/WebTools-NG-0.3.12.898c1ee.AppImage"
-	chmod +x WebTools-NG-0.3.12.898c1ee.AppImage
-	./WebTools-NG-0.3.12.898c1ee.AppImage --appimage-extract
-	rm WebTools-NG-0.3.12.898c1ee.AppImage
+	echo "---Installing WebTools-NG---"
+	wget "https://github.com/WebTools-NG/WebTools-NG/releases/download/V0.3.12.898c1ee/WebTools-NG-0.3.12.898c1ee.AppImage" 2 &>/dev/null
+	chmod +x WebTools-NG-0.3.12.898c1ee.AppImage 2 &>/dev/null
+	./WebTools-NG-0.3.12.898c1ee.AppImage --appimage-extract 2 &>/dev/null
+	rm WebTools-NG-0.3.12.898c1ee.AppImage 2 &>/dev/null
 fi
 cd squashfs-root
-./webtools-ng --no-sandbox X-Plex-Token=${PLEX_TOKEN}
+./webtools-ng --no-sandbox X-Plex-Token=${PLEX_TOKEN} 2 &>/dev/null
