@@ -21,6 +21,8 @@ docker run --name WebTools-NG -d \
 	--env 'UID=99' \
 	--env 'GID=100' \
 	--env 'UMASK=000' \
+	--env 'PLEX_TOKEN=x' \
+	--env 'EXPORT_PATH=/mnt/export'
 	--volume /mnt/user/appdata/webtools-ng:/mnt/export \
 	lnxd/webtools-ng
 ```
