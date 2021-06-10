@@ -52,6 +52,16 @@ if [ ! -d /home/docker/squashfs-root ]; then
 	rm WebTools-NG-0.3.12.898c1ee.AppImage
 fi
 
+if [ ! -f /home/docker/.config/WebTools-NG/WebTools-NG.json ]; then
+	echo "---Adding default options to WebTools-NG config---"
+	cat >/home/docker/.config/WebTools-NG/WebTools-NG.json <<EOL
+{
+	"General": {
+		"ExportPath": "/mnt/export"
+}
+EOL
+fi
+
 echo "---Starting WebTools-NG---"
 cd webtools-ng
 ./webtools-ng --no-sandbox X-Plex-Token=${PLEX_TOKEN} ExportPath=${EXPORT_PATH} >/dev/null
