@@ -44,14 +44,14 @@ sleep 2
 cd /home/docker
 if [ ! -d /home/docker/squashfs-root ]; then
 	echo "---Installing WebTools-NG---"
-	wget "https://github.com/WebTools-NG/WebTools-NG/releases/download/V0.3.12.898c1ee/WebTools-NG-0.3.12.898c1ee.AppImage" 2 &>/dev/null
+	wget -q "https://github.com/WebTools-NG/WebTools-NG/releases/download/V0.3.12.898c1ee/WebTools-NG-0.3.12.898c1ee.AppImage"
 	chmod +x WebTools-NG-0.3.12.898c1ee.AppImage
 	# Extract AppImage to remove need for Fuse
-	./WebTools-NG-0.3.12.898c1ee.AppImage --appimage-extract
+	./WebTools-NG-0.3.12.898c1ee.AppImage --appimage-extract >/dev/null
 	mv squashfs-root webtools-ng
 	rm WebTools-NG-0.3.12.898c1ee.AppImage
 fi
 
 echo "---Starting WebTools-NG---"
 cd webtools-ng
-./webtools-ng --no-sandbox X-Plex-Token=${PLEX_TOKEN} 2 &>/dev/null
+./webtools-ng --no-sandbox X-Plex-Token=${PLEX_TOKEN} >/dev/null
