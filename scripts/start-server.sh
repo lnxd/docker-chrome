@@ -64,4 +64,4 @@ fi
 
 echo "---Starting WebTools-NG---"
 cd webtools-ng
-./webtools-ng --no-sandbox X-Plex-Token=${PLEX_TOKEN} ExportPath=${EXPORT_PATH} >/dev/null
+./webtools-ng --no-sandbox X-Plex-Token=${PLEX_TOKEN} >/dev/null
